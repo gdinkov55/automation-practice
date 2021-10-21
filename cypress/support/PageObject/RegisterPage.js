@@ -10,7 +10,8 @@ class RegisterPage {
             cy.get('#AccountFrm_email').type(email)
         }
         populateZone(zone) {
-            cy.get('#AccountFrm_zone_id').select(zone)
+           // cy.get('#AccountFrm_zone_id').select(zone)
+           cy.selectLabel('#AccountFrm_zone_id',zone)
         }
         populateAddress1(addressline1) {
             cy.get('#AccountFrm_address_1').type(addressline1)
@@ -25,7 +26,8 @@ class RegisterPage {
             cy.get('#AccountFrm_loginname').type(loginname)
         }
         populatePassword(password) {
-            cy.get('#AccountFrm_password').type(password)
+           // cy.get('#AccountFrm_password').type(password)
+           cy.typeInput('#AccountFrm_password', password)
         }
         populateConfirm(confirm) {
             cy.get('#AccountFrm_confirm').type(confirm)
@@ -37,10 +39,12 @@ class RegisterPage {
             cy.get('#AccountFrm_agree').check(agree)
         }
         populateContinue(next) {
-            cy.get('.col-md-2 > .btn').click(next)
+           // cy.get('.col-md-2 > .btn').click(next)
+           cy.clickButton('.col-md-2 > .btn')
         }
         populateFinal(final) {
-            cy.get('.mb40 > .btn').click(final)
+           //  cy.get('.mb40 > .btn').click(final)
+           cy.clickButton('.mb40 > .btn')
         }
 
 
