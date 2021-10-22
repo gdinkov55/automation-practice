@@ -17,7 +17,7 @@ describe('Test store', () => {
         const testname = `testname_nexo${id}@mailinator.com`
         cy.log(testname)
         const andibulmorkov = `andibulmorkov${id}`
-        cy.log(andibulmorkov)
+        cy.customLog(andibulmorkov)
         cy.log('This is our first test!!!')
         // cy.get('#accountFrm > fieldset > .btn')
         // .should('be.visible')
@@ -29,11 +29,15 @@ describe('Test store', () => {
 
         // Populate register form
         // cy.get('#AccountFrm_firstname').type('jeki jeki')
-        register.populateFirstName('jeki jeki;')
+        //register.populateFirstName('jeki jeki;')
         // cy.get('#AccountFrm_lastname').type('hans')
-        register.populateLastName('hans')
+        //register.populateLastName('hans')
         // cy.get('#AccountFrm_email').type(testname)
-        register.populateEmail(testname)
+        //register.populateEmail(testname)
+        
+        cy.personalDetails('jeki jeki','hans', testname)
+
+
         // cy.get('#AccountFrm_zone_id').select('Essex')
         register.populateZone('Essex')
         // cy.get('#AccountFrm_address_1').type('na naisi ferodo')

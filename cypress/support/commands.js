@@ -33,3 +33,13 @@ Cypress.Commands.add('typeInput', (locator, input) => {
 Cypress.Commands.add('selectLabel', (locator, label) => {
     cy.get(locator).select(label)
 })
+Cypress.Commands.add('personalDetails', (firstName, lastName, email, telephone = " ", fax = " ") => {
+    cy.typeInput('#AccountFrm_firstname' , firstName)
+    cy.typeInput('#AccountFrm_lastname', lastName)
+    cy.typeInput('#AccountFrm_email', email)
+    cy.typeInput('#AccountFrm_telephone', telephone)
+    cy.typeInput('#AccountFrm_fax', fax)
+})
+Cypress.Commands.add('customLog', (message) => {
+    cy.log(`katalizator: ${message}`)
+})
