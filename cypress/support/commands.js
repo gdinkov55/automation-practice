@@ -43,3 +43,12 @@ Cypress.Commands.add('personalDetails', (firstName, lastName, email, telephone =
 Cypress.Commands.add('customLog', (message) => {
     cy.log(`katalizator: ${message}`)
 })
+Cypress.Commands.add('yourAddress', (address1, city, region, zip, company = " ", address2 = " ") => {
+    cy.typeInput('#AccountFrm_company', company)
+    cy.typeInput('#AccountFrm_address_1', address1)
+    cy.typeInput('#AccountFrm_address_2', address2)
+    cy.typeInput('#AccountFrm_city', city)
+    cy.selectLabel('#AccountFrm_zone_id', region)
+    cy.typeInput('#AccountFrm_postcode', zip)
+})
+Cypress.Commands.add
